@@ -1,86 +1,59 @@
-## Documentation for the Minecraft-style Game
+## Minecraft-Style Game with Ursina
 
-### Overview
+This repository contains the source code for a simple Minecraft-style game implemented using the Ursina game development framework. The game features a first-person perspective, block selection, and the ability to build and destroy blocks in the environment.
 
-This code is a simple implementation of a Minecraft-style game using the Ursina game development framework. It includes a first-person perspective, a selection of block types, a hand with which to interact, and the ability to build and destroy blocks in the environment.
+### Getting Started
 
-### Dependencies
+1. **Install Ursina:**
+   ```bash
+   pip install ursina
+   ```
 
-Make sure you have Ursina installed to run this code. You can install it using:
-
-```bash
-pip install ursina
-```
+2. **Run the Game:**
+   - Copy the code from `minecraft_game.py` into a Python file.
+   - Execute the file: `python your_file.py`
 
 ### Code Structure
 
-The code consists of two parts. The first part is the main Minecraft-style game with blocks, a player, and a hand. The second part includes additional classes for testing cubes and buttons.
+The main game code is organized into several components:
 
-#### Main Game Code
+- **Initialization:** Set up the Ursina application, load textures, and configure the environment.
+  
+- **Update Function:** Handle input and update the game state.
 
-1. **Initialization:**
-   - Import necessary modules from Ursina.
-   - Create an Ursina application instance.
-   - Load textures for different block types, the skybox, and the arm texture.
-   - Disable the FPS counter and exit button.
+- **Voxel Class:** Represents a block in the game, allowing for building and destruction.
 
-2. **Update Function:**
-   - Check for keyboard input to change the active block type.
-   - Handle left and right mouse button actions to build or destroy blocks.
+- **Sky Class:** Represents the sky in the game.
 
-3. **Voxel Class:**
-   - Represents a block in the game.
-   - Extends the `Button` class in Ursina.
-   - Initializes with a specific texture and color.
-   - Responds to left and right mouse clicks to build or destroy blocks.
+- **Hand Class:** Represents the player's hand and adjusts its position based on mouse input.
 
-4. **Sky Class:**
-   - Represents the sky in the game.
-   - Extends the `Entity` class.
-   - Displays a textured sphere with double-sided rendering.
+- **Main Loop:** Creates a grid of Voxel instances, initializes player controls, and runs the Ursina application.
 
-5. **Hand Class:**
-   - Represents the player's hand.
-   - Extends the `Entity` class.
-   - Displays a textured model of an arm.
-   - Adjusts position based on mouse input to simulate holding an item.
+Additionally, there is test code for cubes and buttons to demonstrate additional features.
 
-6. **Main Loop:**
-   - Creates a grid of Voxel instances.
-   - Initializes the FirstPersonController for player movement.
-   - Creates instances of Sky and Hand.
-   - Runs the Ursina application.
+### Test Code
 
-#### Additional Test Code
+- **Test_cube Class:** Represents a textured cube for testing.
 
-1. **Test_cube Class:**
-   - Extends the `Entity` class.
-   - Represents a test cube with a textured appearance.
-   - Initialized with a rotation.
+- **Test_button Class:** Represents a button with highlighting and pressing effects for testing.
 
-2. **Test_button Class:**
-   - Extends the `Button` class.
-   - Represents a test button with different colors for highlighting and pressing.
-   - Responds to left mouse clicks with a punch sound.
+- **Update Function:** Moves a cube to the left when the 'a' key is held down.
 
-3. **Update Function:**
-   - Moves the cube to the left when the 'a' key is held down.
+### How to Contribute
 
-4. **Basic Window and Entities:**
-   - Creates an Ursina application.
-   - Initializes a colored cube (Entity) and a textured cube (Test_cube).
-   - Initializes a Test_button and associates a punch sound with left mouse clicks.
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix: `git checkout -b feature-name`.
+3. Commit your changes: `git commit -m "Description of changes"`.
+4. Push to the branch: `git push origin feature-name`.
+5. Open a pull request.
 
-### How to Run
+### Notes
 
-1. Install Ursina: `pip install ursina`
-2. Copy the code into a Python file (e.g., `minecraft_game.py`).
-3. Run the file: `python minecraft_game.py`
+- Adjust asset paths based on your project structure.
+- The code is a starting point; feel free to customize and extend it.
 
-### Additional Notes
+### Acknowledgments
 
-- Adjust the paths to the asset files based on your project structure.
-- The code includes basic movement controls, block selection, and block placement.
-- Feel free to extend and modify the code to add more features or customize the game elements.
+- This project utilizes the Ursina game development framework.
 
-Now you have a basic understanding of how the Minecraft-style game is structured and how to run it. Enjoy exploring and building in the virtual world!
+Enjoy exploring and building in this simple Minecraft-style game!
