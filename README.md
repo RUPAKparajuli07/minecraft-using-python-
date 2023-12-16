@@ -5,13 +5,23 @@ This repository contains the source code for a simple Minecraft-style game imple
 ### Getting Started
 
 1. **Install Ursina:**
+   Ensure that you have the Ursina library installed. If not, install it using the following command:
    ```bash
    pip install ursina
    ```
 
-2. **Run the Game:**
+2. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/your-username/minecraft-ursina.git
+   cd minecraft-ursina
+   ```
+
+3. **Run the Game:**
    - Copy the code from `minecraft_game.py` into a Python file.
-   - Execute the file: `python your_file.py`
+   - Execute the file: 
+     ```bash
+     python your_file.py
+     ```
 
 ### Code Structure
 
