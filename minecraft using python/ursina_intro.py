@@ -1,4 +1,13 @@
+from ursina import *
 
+# Test Cube
+class Test_cube(Entity):
+	def __init__(self):
+		super().__init__(
+			parent = scene,
+			model = 'cube',
+			texture = 'white_cube',
+			rotation = Vec3(45,45,45))
 
 # Test button
 class Test_button(Button):
