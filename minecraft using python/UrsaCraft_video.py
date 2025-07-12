@@ -1,31 +1,4 @@
-from ursina import *
-from ursina.prefabs.first_person_controller import FirstPersonController
 
-app = Ursina()
-grass_texture = load_texture('assets/grass_block.png')
-stone_texture = load_texture('assets/stone_block.png')
-brick_texture = load_texture('assets/brick_block.png')
-dirt_texture  = load_texture('assets/dirt_block.png')
-sky_texture   = load_texture('assets/skybox.png')
-arm_texture   = load_texture('assets/arm_texture.png')
-punch_sound   = Audio('assets/punch_sound',loop = False, autoplay = False)
-block_pick = 1
-
-window.fps_counter.enabled = False
-window.exit_button.visible = False
-
-def update():
-	global block_pick
-
-	if held_keys['left mouse'] or held_keys['right mouse']:
-		hand.active()
-	else:
-		hand.passive()
-
-	if held_keys['1']: block_pick = 1
-	if held_keys['2']: block_pick = 2
-	if held_keys['3']: block_pick = 3
-	if held_keys['4']: block_pick = 4
 
 class Voxel(Button):
 	def __init__(self, position = (0,0,0), texture = grass_texture):
